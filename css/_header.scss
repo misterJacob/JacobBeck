@@ -1,0 +1,140 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    height: 15vh;
+    margin: auto;
+    .logo {
+        padding: 2em;
+    }
+    .title {
+        position: relative;
+        top: 40%;
+        right: 40%;
+        color: $secondtextColor;
+    }
+}
+
+.burger-wrap {
+    display: flex;
+    position: absolute;
+    top: 2.5em;
+    right: 2.5em;
+    z-index: 1;
+    cursor: pointer;
+    pointer-events: all;
+    height: 40px;
+    width: 40px;
+    z-index: 1;
+    @include transition-ease;
+    .burger {
+        width: 40px;
+        height: 9px;
+        background: rgba($secondaryColor, 0.7);
+        position: absolute;
+        top: 7px;
+        left: 0;
+        @include transition-ease;
+        &::before {
+            content: '';
+            width: 40px;
+            height: 9px;
+            background: rgba($secondaryColor, 0.7);
+            position: absolute;
+            top: -13px;
+            left: 0;
+            @include transition-ease;
+        }
+        &::after {
+            content: '';
+            width: 25px;
+            height: 9px;
+            background: rgba($secondaryColor, 0.7);
+            position: absolute;
+            top: 13px;
+            @include transition-ease;
+            left: 0;
+        }
+        &.open {
+            transform: rotate(1080deg);
+            background: transparent;
+            &::before {
+                transform: rotate(45deg) translate(5px, 14px);
+                width: 41px;
+                background: linear-gradient( to right, rgba($secondaryColor, 0.7), rgba($primeryColor, 0.9), rgba($secondaryColor, 0.7));
+                @include transition-ease;
+            }
+            &::after {
+                width: 41px;
+                transform: rotate(-45deg) translate(3px, -14px);
+                background: linear-gradient( to right, rgba($secondaryColor, 0.7), rgba($primeryColor, 0.9), rgba($secondaryColor, 0.7));
+                @include transition-ease;
+            }
+        }
+    }
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    opacity: 0.93;
+    visibility: hidden;
+    z-index: 1;
+    &.open {
+        visibility: visible;
+    }
+    .nav-menu {
+        z-index: 1000;
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        overflow: hidden;
+        background: $primeryColor;
+        list-style: none;
+        padding-right: 1rem;
+        @include transition-ease;
+        transform: translateY(-100%);
+        &.open {
+            transform: translateY(0);
+        }
+        .items {
+            transform: translateX(100vw);
+            @include transition-ease;
+            cursor: pointer;
+            pointer-events: all;
+            &.open {
+                transform: translateX(0);
+                color: $secondaryColor;
+                text-shadow: 1px 1px 1px rgba($thirdColor, 0.7);
+            }
+            &.active>a {
+                color: $secondaryColor;
+                text-shadow: 1px 1px 1px rgba($thirdColor, 0.7);
+            }
+        }
+        .link {
+            display: inline-block;
+            font-size: 2rem;
+            text-transform: uppercase;
+            padding: 2rem 0 2rem 1.5rem;
+            font-weight: 300;
+            color: rgba($secondaryColor, 0.7);
+            @include transition-ease;
+            &:hover {
+                color: $secondtextColor;
+            }
+        }
+    }
+}
+
+@for $i from 1 through 4 {
+    .nav-menu {
+        .items:nth-child(#{$i}) {
+            transition-delay: ($i * 0.1s) + 0.3s;
+        }
+    }
+}

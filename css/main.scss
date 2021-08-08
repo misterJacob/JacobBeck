@@ -1,3 +1,14 @@
+@import"globals";
+@import"header";
+@import"landing";
+@import"footer";
+@import"section";
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     width: 100%;
     background: whitesmoke;
@@ -5,12 +16,18 @@ body {
 
 main {
     width: 90%;
-    height: 100vh;
+    height: 400vh;
     margin: auto;
-    background: linear-gradient(70deg, rgba(255, 255, 255, 0.295), rgba(0, 0, 0, 0.21), rgba(255, 255, 255, 0.295)), url(./photos/jacob-reception.jpg)center top;
+    position: relative;
+    top: -15vh;
+    left: 0;
+    padding-top: 15vh;
+    background: linear-gradient(120deg, rgba($primaryColor, 0.2), rgba($secondaryColor, 0.02), rgba($thirdColor, 0.1));
     background-size: cover;
 }
 
 header {
     text-align: center;
+    height: 15vh;
+    width: 100%;
 }
