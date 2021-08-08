@@ -322,6 +322,125 @@ li {
   grid-row: 2/3;
 }
 
+.section-wrap .section-2 {
+  background: url(../photos/jacob-mountain.JPG) center top;
+  background-size: cover;
+}
+
+.section-wrap .section-2 .card-wrap {
+  width: 100%;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 10% 1fr 1fr 10%;
+      grid-template-columns: 10% 1fr 1fr 10%;
+  -ms-grid-rows: 10% 1fr 1fr 10%;
+      grid-template-rows: 10% 1fr 1fr 10%;
+  grid-gap: 10px;
+}
+
+.section-wrap .section-2 .card-wrap .card {
+  width: 100%;
+  height: 100%;
+  background: rgba(153, 13, 3, 0.4);
+  border-radius: 10px;
+  position: relative;
+}
+
+.section-wrap .section-2 .card-wrap .card img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 50%;
+  height: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.section-wrap .section-2 .card-wrap .card-1 {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+}
+
+.section-wrap .section-2 .card-wrap .card-2 {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3/4;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+}
+
+.section-wrap .section-2 .card-wrap .card-3 {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3/4;
+}
+
+.section-wrap .section-2 .card-wrap .card-4 {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3/4;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3/4;
+}
+
+.section-wrap .section-3 {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.section-wrap .section-3 .blog {
+  width: 90%;
+  height: 50%;
+}
+
+.section-wrap .section-3 .blog .photo {
+  width: 160px;
+  height: 160px;
+  position: relative;
+}
+
+.section-wrap .section-3 .blog .photo img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.section-wrap .section-3 .blog .photo figcaption {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
+.section-wrap .section-3 .blog .writing {
+  float: right;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -336,10 +455,9 @@ body {
 
 main {
   width: 90%;
-  height: 400vh;
   margin: auto;
   position: relative;
-  top: -15vh;
+  top: 0;
   left: 0;
   padding-top: 15vh;
   background: linear-gradient(120deg, rgba(41, 41, 41, 0.2), rgba(153, 13, 3, 0.02), rgba(177, 247, 85, 0.1));
@@ -350,4 +468,8 @@ header {
   text-align: center;
   height: 15vh;
   width: 100%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2001;
 }
